@@ -34,3 +34,6 @@ jobs:
         with:
           tag_name: ${{ tgn }}
           files: /tmp/asset/**/*.txt
+        env:
+          tgn: '1.2.6'
+    
