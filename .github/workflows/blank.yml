@@ -31,7 +31,13 @@ jobs:
 
       - name: Generate release tag
         run: |
-          echo "tgn=1.2.6" >> $GITHUB_ENV
+          echo "tgn=1.2.7" >> $GITHUB_ENV
+          echo "$GITHUB_ENV"
+          echo
+          /bin/ls -la "$GITHUB_ENV"
+          echo
+          cat "$GITHUB_ENV"
+          echo
 
       - name: Release
         uses: softprops/action-gh-release@v2
