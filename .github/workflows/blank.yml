@@ -32,7 +32,7 @@ jobs:
       - name: Release
         uses: softprops/action-gh-release@v2
         with:
-          tag_name: ${ tagname1 }
+          tag_name: ${{ tagname1 }}
           files: /tmp/asset/**/*.txt
         env:
-          tagname1: ${ tagname }
+          tagname1: ${{ tagname }}
