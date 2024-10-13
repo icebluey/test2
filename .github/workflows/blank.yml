@@ -27,9 +27,10 @@ jobs:
           echo 7 > /tmp/asset/a/b/c/d/e/f/g.txt
           echo 111 > /tmp/asset/a/111
           echo 111 > /tmp/asset/666
+          echo 1.2.5 > /tmp/1.2.5.txt
           
       - name: Release
         uses: softprops/action-gh-release@v2
         with:
-          tag_name: 1.2.4
+          tag_name: $(cat /tmp/1.2.5.txt)
           files: /tmp/asset/**/*.txt
