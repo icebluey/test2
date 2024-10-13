@@ -38,7 +38,7 @@ jobs:
           tag_name: ${{ env.tgn }}
           files: |
             /tmp/_output_assets/_output/kernel/assets/*
-            /tmp/_output_assets/_output/kernel/kernel-*-repos/packages/*
+            /tmp/_output_assets/_output/kernel/kernel-**-repos/packages/*
 
 
           
