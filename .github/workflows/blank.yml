@@ -9,7 +9,8 @@ jobs:
     # The type of runner that the job will run on
     runs-on: ubuntu-22.04
 
-    # Steps represent a sequence of tasks that will be executed as part of the job
+    env:
+      tgn: 1.2.5
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v4
@@ -29,11 +30,14 @@ jobs:
           echo 111 > /tmp/asset/666
           echo 1.2.5 > /tmp/1.2.5.txt
           export tgn='1.2.5'
+
+    - name: Generate release tag
+      id: tag
+      run: |
+        echo "::set-output name=release_tag::UserBuild_$(date +"%Y.%m.%d_%H-%M")"
+
       - name: Release
         uses: softprops/action-gh-release@v2
         with:
-          tag_name: ${{ tgn }}
+          tag_name: ${{ env.tgn }}
           files: /tmp/asset/**/*.txt
-        env:
-          tgn: '1.2.6'
-    
