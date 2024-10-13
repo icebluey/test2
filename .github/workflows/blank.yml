@@ -31,10 +31,6 @@ jobs:
           echo 1.2.5 > /tmp/1.2.5.txt
           export tgn='1.2.5'
 
-    - name: Generate release tag
-      id: tag
-      run: |
-        echo "::set-output name=release_tag::UserBuild_$(date +"%Y.%m.%d_%H-%M")"
 
       - name: Release
         uses: softprops/action-gh-release@v2
