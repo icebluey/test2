@@ -1,8 +1,5 @@
 name: Build
 on:
-  push:
-    tags:
-      - v1
   workflow_dispatch:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
@@ -34,4 +31,5 @@ jobs:
       - name: Release
         uses: softprops/action-gh-release@v2
         with:
+          tag_name: 1.2.3
           files: /tmp/asset/*
