@@ -1,0 +1,21 @@
+name: Build
+on:
+  workflow_dispatch:
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # This workflow contains a single job called "build"
+  build:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-22.04
+
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v4
+
+      # Runs a set of commands using the runners shell
+      - name: Run a multi-line script
+        run: |
+          /bin/ls -la /tmp/
+          /bin/ls -la /tmp/_output_assets/_output/kernel/assets/
+          
