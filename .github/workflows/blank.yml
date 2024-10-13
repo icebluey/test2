@@ -28,11 +28,9 @@ jobs:
           echo 111 > /tmp/asset/a/111
           echo 111 > /tmp/asset/666
           echo 1.2.5 > /tmp/1.2.5.txt
-          tagname='1.2.5'
+          export tgn='1.2.5'
       - name: Release
         uses: softprops/action-gh-release@v2
         with:
-          tag_name: ${{ tagname1 }}
+          tag_name: ${{ tgn }}
           files: /tmp/asset/**/*.txt
-        env:
-          tagname1: ${{ tagname }}
