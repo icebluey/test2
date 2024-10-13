@@ -1,4 +1,4 @@
-name: Build
+name: ls
 on:
   workflow_dispatch:
 
