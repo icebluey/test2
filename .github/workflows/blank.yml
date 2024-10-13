@@ -9,8 +9,6 @@ jobs:
     # The type of runner that the job will run on
     runs-on: ubuntu-22.04
 
-    env:
-      tgn: 1.2.5
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v4
@@ -31,6 +29,9 @@ jobs:
           echo 1.2.5 > /tmp/1.2.5.txt
           export tgn='1.2.5'
 
+      - name: Generate release tag
+        run: |
+          echo "tgn=1.2.6" >> $GITHUB_ENV
 
       - name: Release
         uses: softprops/action-gh-release@v2
