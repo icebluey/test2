@@ -21,6 +21,7 @@ jobs:
           echo 1 > /tmp/_output_assets/_output/kernel/assets/1.txt
           echo 2 > /tmp/_output_assets/_output/kernel/kernel-6.12.1-repos/packages/2.txt
           echo 3 > /tmp/_output_assets/_output/kernel/kernel-6.12.1-repos/packages/3.txt
+          sleep 300
 
       - name: Generate release tag
         run: |
