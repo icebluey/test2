@@ -16,22 +16,15 @@ jobs:
       # Runs a set of commands using the runners shell
       - name: Run a multi-line script
         run: |
-          mkdir -p /tmp/asset/a/b/c/d/e/f/g
-          echo 1 > /tmp/asset/a.txt
-          echo 2 > /tmp/asset/a/b.txt
-          echo 3 > /tmp/asset/a/b/c.txt
-          echo 4 > /tmp/asset/a/b/c/d.xyz
-          echo 5 > /tmp/asset/a/b/c/d/e.txt
-          echo 6 > /tmp/asset/a/b/c/d/e/f.txt
-          echo 7 > /tmp/asset/a/b/c/d/e/f/g.txt
-          echo 111 > /tmp/asset/a/111
-          echo 111 > /tmp/asset/666
-          echo 1.2.5 > /tmp/1.2.5.txt
-          export tgn='1.2.5'
+          mkdir -p /tmp/_output_assets/_output/kernel/assets
+          mkdir -p /tmp/_output_assets/_output/kernel/kernel-6.12.1-repos/packages
+          echo 1 > /tmp/_output_assets/_output/kernel/assets/1.txt
+          echo 2 > /tmp/_output_assets/_output/kernel/kernel-6.12.1-repos/packages/2.txt
+          echo 3 > /tmp/_output_assets/_output/kernel/kernel-6.12.1-repos/packages/3.txt
 
       - name: Generate release tag
         run: |
-          echo "tgn=1.2.7" >> $GITHUB_ENV
+          echo "tgn=1.2.8" >> $GITHUB_ENV
           echo "$GITHUB_ENV"
           echo
           /bin/ls -la "$GITHUB_ENV"
@@ -43,4 +36,9 @@ jobs:
         uses: softprops/action-gh-release@v2
         with:
           tag_name: ${{ env.tgn }}
-          files: /tmp/asset/**/*.txt
+          files: |
+            /tmp/_output_assets/_output/kernel/assets/*
+            /tmp/_output_assets/_output/kernel/kernel-*-repos/packages/*
+
+
+          
