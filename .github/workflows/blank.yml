@@ -29,7 +29,7 @@ jobs:
           echo 1 > /tmp/asset/a.txt
           echo 2 > /tmp/asset/a/b.txt
           echo 3 > /tmp/asset/a/b/c.txt
-          echo 4 > /tmp/asset/a/b/c/d.txt
+          echo 4 > /tmp/asset/a/b/c/d.xyz
           echo 5 > /tmp/asset/a/b/c/d/e.txt
           echo 6 > /tmp/asset/a/b/c/d/e/f.txt
           echo 7 > /tmp/asset/a/b/c/d/e/f/g.txt
