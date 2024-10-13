@@ -25,13 +25,18 @@ jobs:
       # Runs a set of commands using the runners shell
       - name: Run a multi-line script
         run: |
-          sudo mkdir /tmp/asset
-          echo 1 | sudo tee /tmp/asset/1.txt
-          echo 2 | sudo tee /tmp/asset/2.txt
-
+          mkdir -p /tmp/asset/a/b/c/d/e/f/g
+          echo 1 > /tmp/asset/a.txt
+          echo 2 > /tmp/asset/a/b.txt
+          echo 3 > /tmp/asset/a/b/c.txt
+          echo 4 > /tmp/asset/a/b/c/d.txt
+          echo 5 > /tmp/asset/a/b/c/d/e.txt
+          echo 6 > /tmp/asset/a/b/c/d/e/f.txt
+          echo 7 > /tmp/asset/a/b/c/d/e/f/g.txt
+          
       - name: Archive production artifacts
         uses: actions/upload-artifact@v4
         with:
           name: my-artifact
           path: |
-            /tmp/asset/
+            /tmp/asset/**/*.txt
