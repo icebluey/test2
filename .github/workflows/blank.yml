@@ -2,10 +2,7 @@ name: Build
 on:
   push:
     tags:
-      - 1.2.3
-  #pull_request:
-  #  branches: [ "master" ]
-  workflow_dispatch:
+      - "1.2.3"
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
