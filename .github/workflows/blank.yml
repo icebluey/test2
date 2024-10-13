@@ -33,6 +33,8 @@ jobs:
           echo 5 > /tmp/asset/a/b/c/d/e.txt
           echo 6 > /tmp/asset/a/b/c/d/e/f.txt
           echo 7 > /tmp/asset/a/b/c/d/e/f/g.txt
+          echo 111 > /tmp/asset/a/111
+          echo 111 > /tmp/asset/666
           
       - name: Archive production artifacts
         uses: actions/upload-artifact@v4
